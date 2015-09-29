@@ -1,0 +1,4 @@
+En Opciones de Proyecto:
+CPPFLAGS  =  -I/usr/local/include/libxml++-1.0
+LDFLAGS = -L/usr/local/lib -lxml++-1.0
+(Y tal vez poner Librerias en la carpeta del proyecto actual)

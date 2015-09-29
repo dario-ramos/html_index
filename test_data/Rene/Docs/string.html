@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>C++ string class</title>
+<!-- TemplateEndEditable -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta lang="en-us" xml:lang="en" name="author" content="Chaitanya Garikapati - Department of Computer Science" />
+<meta lang="en-us" xml:lang="en" name="copyright" content="Copyright (C), 2006 - Department of Computer Science,BGSU" />
+<meta lang="en-us" xml:lang="en" name="keywords" content="BGSU, Computer Science, Department of Computer Science, Documentation, C++, String, class" />
+<meta lang="en-us" xml:lang="en" name="description" content="BGSU Computer Science: C++ string class" />
+      
+        <link href="../css/medium.css" rel="stylesheet" type="text/css" title="medium" />
+	<link href="../css/smallest.css" rel="alternate stylesheet" type="text/css" title="smallest" />
+	<link href="../css/larger.css" rel="alternate stylesheet" type="text/css" title="larger" />
+	<link href="../css/largest.css" rel="alternate stylesheet" type="text/css" title="largest" />
+        
+	<script type="text/JavaScript" src="http://www.bgsu.edu/js/main.js"></script>
+	<script type="text/JavaScript" src="http://www.bgsu.edu/js/event_popup.js"></script>
+	<script type="text/javascript" src="../scripts/styleswitcher.js"></script>
+
+</head>
+<body>
+<div id="skip">
+<p><a href="#content" accesskey="1">Skip to Main Content</a></p>
+<p><a href="#navigation" accesskey="2">Skip to Navigation</a></p>
+<p><a href="#footer" accesskey="3">Skip to Footer links</a></p></div>
+
+<table width="780" border="0" align="center" cellpadding="0" cellspacing="0" summary=" ">
+<tr align="left" valign="top">
+<td width="15" height="37"><img src="../images/spacer.gif" width="15" height="37" hspace="0" vspace="0" border="0" alt="" />
+</td>
+<td width="1" height="37"><img src="../images/spacer.gif" width="1" height="37" hspace="0" vspace="0" border="0" alt="" />
+</td>
+<td width="748" height="37"><img src="../images/spacer.gif" width="748" height="37" hspace="0" vspace="0" border="0" alt="" />
+</td>
+<td width="1" height="37"><img src="../images/spacer.gif" width="1" height="37" hspace="0" vspace="0" border="0" alt="" />
+</td>
+<td width="15" height="37"><img src="../images/spacer.gif" width="15" height="37" hspace="0" vspace="0" border="0" alt="" />
+</td>
+</tr>
+<tr align="left" valign="top">
+  <td height="44"><img src="../images/spacer.gif" width="15" height="44" hspace="0" vspace="0" border="0" alt="" /></td>
+  <td height="44"><img src="../images/spacer.gif" width="1" height="44" hspace="0" vspace="0" border="0" alt="" /></td>
+  <td height="44" valign="bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0" summary=" ">
+      <tr align="left" valign="top">
+        <td width="122" height="44" valign="bottom"><a href="http://www.bgsu.edu/"><img src="../images/logo.gif" alt="BGSU Logo" width="122" height="44" hspace="0" vspace="0" border="0" /></a></td>
+        <td width="20" height="44" valign="bottom"><img src="../images/spacer.gif" width="20" height="44" hspace="0" vspace="0" border="0" alt="" /></td>
+        <td width="606" height="44" align="right" valign="bottom">
+	<table width="606"  border="0" cellpadding="0" cellspacing="0" summary="Quicklink table">
+            <tr>
+                <td width="606" height="21" align="right" valign="top" bgcolor="#000000"><!-- #BeginlibraryItem "../library/quicklinks.lbi" -->
+<table summary="Quicklink table">
+<tr>
+
+	<td width="120" height="21" align="right" bgcolor="#000000"><div id="Menupos" style="position:relative; width:120px; height:21px;">&nbsp;<script type="text/javascript" src="http://www.bgsu.edu/js/search_menu_var.js"></script><script type="text/javascript" src="http://www.bgsu.edu/js/menu.js"></script></div></td>
+        <td width="1" height="21" align="right"></td>
+        <td height="21" align="right" bgcolor="#000000">
+               
+                 <!-- Begin Quick links Slot Template -->
+                <label for="quicklinks" class="hidden">Quicklinks</label>
+                <select class="search_new" name="quicklinks" id="quicklinks" onchange="MM_jumpMenu('parent',this,1)">
+		  <option value="#" selected="selected">Quick links...</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="#">HOT liNKS</option>
+          <option value="http://www.bgsu.edu/offices/admissions/choose/aboutbg/">&nbsp;&nbsp;About
+          BGSU</option>
+          <option value="http://www.bgsu.edu/">&nbsp;&nbsp;BGSU Home</option>
+          <option value="http://www.bgsu.edu/offices/pr/campusupdate/page13966.html">&nbsp;&nbsp;Campus
+          Update Form</option>
+          <option value="http://www.bgsu.edu/offices/sa/reslife/place2be/">&nbsp;&nbsp;Conference
+          programs</option>
+          <option value="http://www.bgsu.edu/scripts/contact.html">&nbsp;&nbsp;Contact
+          Us</option>
+          <option value="http://www.bgsu.edu/calendar/calendar.html">&nbsp;&nbsp;Events</option>
+          <option value="http://www.bgsu.edu/offices/pr/news/2005/">&nbsp;&nbsp;News</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/search.html">SEARCH</option>
+          <option value="http://www.bgsu.edu/people_search.html">&nbsp;&nbsp;Search
+          people</option>
+          <option value="http://www.bgsu.edu/web_search.html">&nbsp;&nbsp;Search
+          Web</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/academics/index.html">ACADemICS</option>
+          <option value="http://www.bgsu.edu/offices/admissions/choose/calendar.html">&nbsp;&nbsp;Academic
+          Calendar</option>
+          <option value="http://www.bgsu.edu/offices/acen/">&nbsp;&nbsp;Academic
+          Enhancement</option>
+          <option value="http://adultlearnerservices.bgsu.edu/">&nbsp;&nbsp;Adult
+          Learners Services &amp; Evening Credit programs</option>
+          <option value="http://www.bgsu.edu/colleges/gradcol/catalogs.htm">&nbsp;&nbsp;Catalog-Graduate</option>
+          <option value="http://www.bgsu.edu/catalog">&nbsp;&nbsp;Catalog-Undergraduate</option>
+          <option value="http://www.firelands.bgsu.edu/">&nbsp;&nbsp;College
+          - Firelands</option>
+          <option value="http://www.bgsu.edu/colleges/gradcol/">&nbsp;&nbsp;College
+          - Graduate</option>
+          <option value="http://www.bgsu.edu/colleges/as/">&nbsp;&nbsp;College
+          of Arts and Sciences</option>
+          <option value="http://www.cba.bgsu.edu/cba/index.html">&nbsp;&nbsp;College
+          of Business Administration</option>
+          <option value="http://www.bgsu.edu/colleges/edhd/">&nbsp;&nbsp;College
+          of Education &amp; Human Development</option>
+          <option value="http://www.bgsu.edu/colleges/hhs/">&nbsp;&nbsp;College
+          of Health &amp; Human Services</option>
+          <option value="http://www.bgsu.edu/colleges/music/index.html">&nbsp;&nbsp;College
+          of Musical Arts</option>
+          <option value="http://www.bgsu.edu/colleges/technology/">&nbsp;&nbsp;College
+          of Technology</option>
+          <option value="http://www.bgsu.edu/colleges/">&nbsp;&nbsp;Colleges</option>
+          <option value="http://www.bgsu.edu/offices/sa/life/commencement.html">&nbsp;&nbsp;Commencement</option>
+          <option value="http://cee.bgsu.edu">&nbsp;&nbsp;Continuing &amp; Extended
+          Education</option>
+          <option value="http://www.bgsu.edu/offices/sa/career/students/coop.html">&nbsp;&nbsp;Cooperative
+          Education and Internship program</option>
+          <option value="http://webapps.bgsu.edu/courses/search.php">&nbsp;&nbsp;Course
+          Descriptions</option>
+          <option value="http://ideal.bgsu.edu/ONliNE/">&nbsp;&nbsp;Distance
+          Learning (idEAL)</option>
+          <option value="http://educationabroad.bgsu.edu">&nbsp;&nbsp;Education
+          Abroad</option>
+          <option value="http://www.bgsu.edu/offices/honors/">&nbsp;&nbsp;Honors
+          program</option>
+          <option value="http://www.bgsu.edu/departments/greal/llc/frameset.htm">&nbsp;&nbsp;Language
+          Learning Center</option>
+          <option value="http://www.bgsu.edu/colleges/library/">&nbsp;&nbsp;libraries</option>
+          <option value="http://go2.bgsu.edu/choose/academics/majors/">&nbsp;&nbsp;Majors</option>
+          <option value="http://www.bgsu.edu/offices/acen/mathlab/">&nbsp;&nbsp;Math
+          and Stats Tutoring Center</option>
+          <option value="http://www.bgsu.edu/offices/achievement/index.htm">&nbsp;&nbsp;Office
+          of Student Academic Achievement</option>
+          <option value="http://www.bgsu.edu/offices/provost/">&nbsp;&nbsp;Office
+          of the provost</option>
+          <option value="http://webapps.bgsu.edu/classes/search.php">&nbsp;&nbsp;Schedule
+          of Classes</option>
+          <option value="http://www.bgsu.edu/offices/acen/sslab/">&nbsp;&nbsp;Study
+          Skills Center</option>
+          <option value="http://www.bgsu.edu/offices/acen/writerslab/">&nbsp;&nbsp;Writing
+          Center</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="#">ADMISSIONS</option>
+          <option value="http://www.bgsu.edu/offices/admissions/choose/apply.html">&nbsp;&nbsp;Apply
+          Now</option>
+          <option value="http://www.bgsu.edu/offices/sa/counseling/Testing.htm">&nbsp;&nbsp;College
+          Entrance Exams</option>
+          <option value="http://admissnt1.bgsu.edu/request/info.php">&nbsp;&nbsp;Request
+          Information</option>
+          <option value="http://admissnt1.bgsu.edu/visitbg/">&nbsp;&nbsp;Schedule
+          a Visit</option>
+          <option value="http://admissnt1.bgsu.edu/offices/admissions/choose/transfer.html">&nbsp;&nbsp;transfer
+          Students</option>
+          <option value="http://admissnt1.bgsu.edu/offices/admissions/choose/tour1.html">&nbsp;&nbsp;Virtual
+          Tour</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/alumni_guests/index.html">ALUMNI &amp; GUESTS</option>
+          <option value="http://falconalumni.bgsu.edu/">&nbsp;&nbsp;Alumni Association</option>
+          <option value="http://www.alumniconnections.com/olc/pub/BGU/directory.html">&nbsp;&nbsp;Alumni
+          Directory</option>
+          <option value="http://www.alumniconnections.com/olc/pub/BGU">&nbsp;&nbsp;BGSU
+          Online Community</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://bgsufalcons.collegesports.com/">ATHLETICS</option>
+          <option value="http://bgsufalcons.ocsn.com/store/bgu-store.html">&nbsp;&nbsp;Falcon
+          FANStore</option>
+          <option value="http://bgsufalcons.ocsn.com/calendar/bgu-calendar.html">&nbsp;&nbsp;Schedules</option>
+          <option value="http://bgsufalcons.ocsn.com/tickets/bgu-tickets.html">&nbsp;&nbsp;Tickets</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/map/">CAMpUS MAp</option>
+          <option value="http://admissnt1.bgsu.edu/offices/admissions/choose/directions.html">&nbsp;&nbsp;Driving
+          Directions</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/faculty_staff/index.html">FACULTY &amp; STAFF</option>
+          <option value="http://www.bgsu.edu/offices/index.html">&nbsp;&nbsp;Administrative
+          Offices</option>
+          <option value="http://www.bgsu.edu/offices/cio/page838.html">&nbsp;&nbsp;BG@100</option>
+          <option value="http://www.bgsu.edu/offices/execvp/index.html">&nbsp;&nbsp;Executive
+          Vice president</option>
+          <option value="http://www.bgsu.edu/faculty_staff/forms/">&nbsp;&nbsp;Forms</option>
+          <option value="http://www.bgsu.edu/offices/pr/gsm/">&nbsp;&nbsp;Graphic
+          Standards Manual</option>
+          <option value="http://www.bgsu.edu/offices/ohr">&nbsp;&nbsp;Human Resources</option>
+          <option value="http://www.bgsu.edu/offices/ohr/employment/">&nbsp;&nbsp;Jobs
+          at BGSU</option>
+          <option value="http://www.bgsu.edu/offices/president/index.html">&nbsp;&nbsp;Office
+          of the president</option>
+          <option value="http://www.bgsu.edu/offices/provost/">&nbsp;&nbsp;Office
+          of the provost</option>
+          <option value="http://www.bgsu.edu/offices/sa/health/pharmacy/">&nbsp;&nbsp;pharmacy</option>
+          <option value="http://www.bgsu.edu/offices/pr/monitor/">&nbsp;&nbsp;The
+          Monitor</option>
+          <option value="http://www.bgsu.edu/offices/ohr/training/">&nbsp;&nbsp;training</option>
+          <option value="http://www.bgsu.edu/offices/pr/gsm/stationary.html">&nbsp;&nbsp;University
+          Stationery</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://giving.bgsu.edu/development/fundingopps">GIVING
+          TO BGSU</option>
+          <option value="http://foundation.bgsu.edu/">&nbsp;&nbsp;Online Giving</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/parents/index.html">pARENTS &amp; FAMILY</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="#">STUDENT liFE</option>
+          <option value="http://www.bg24news.com/">&nbsp;&nbsp;BG 24 News</option>
+          <option value="http://www.bgsu.edu/students/bgexperience/">&nbsp;&nbsp;BG
+          Experience program</option>
+          <option value="http://www.bgsu.edu/offices/president/page11661.html">&nbsp;&nbsp;Code
+          of Ethics &amp; Conduct </option>
+          <option value="http://www.bgsu.edu/offices/sa/greekaffairs/index.html">&nbsp;&nbsp;Greek
+          Organizations</option>
+          <option value="http://www.bgsu.edu/offices/sa/reslife/">&nbsp;&nbsp;Housing/Meal
+          Sign-up</option>
+          <option value="http://www.bgsu.edu/offices/sa/imsc/">&nbsp;&nbsp;Intramurals</option>
+          <option value="http://www.bgsu.edu/offices/sa/cmai/">&nbsp;&nbsp;Multicultural
+          programs</option>
+          <option value="http://off-campus.bgsu.edu">&nbsp;&nbsp;Off-Campus programs</option>
+          <option value="http://www.bgsu.edu/offices/sa/offcampus/">&nbsp;&nbsp;Off-Campus
+          Student Services</option>
+          <option value="http://www.bgsu.edu/offices/sa/oreg/">&nbsp;&nbsp;Orientation &amp; First-Year
+          programs</option>
+          <option value="http://www.bgsu.edu/offices/sa/recsports/">&nbsp;&nbsp;Recreational
+          Sports</option>
+          <option value="http://www.bgsu.edu/offices/sa/reslife/">&nbsp;&nbsp;Residence
+          life</option>
+          <option value="http://www.bgsu.edu/offices/sa/life/organizations.html">&nbsp;&nbsp;Student
+          Organizations</option>
+          <option value="http://www.bgsu.edu/offices/sa/pub/">&nbsp;&nbsp;Student
+          publications</option>
+          <option value="http://www.bgsu.edu/offices/sa/union/">&nbsp;&nbsp;Student
+          Union</option>
+          <option value="http://www.bgnews.com/">&nbsp;&nbsp;The BG News (Campus
+          Newspaper)</option>
+          <option value="http://www.bgsu.edu/studentlife/organizations/usg/">&nbsp;&nbsp;Undergraduate
+          Student Government</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="#">STUDENT SERVICES</option>
+          <option value="http://www.bgsu.edu/offices/bookstore/">&nbsp;&nbsp;Bookstore</option>
+          <option value="http://www.bgsu.edu/offices/bursar/">&nbsp;&nbsp;Bursar
+          (Fees)</option>
+          <option value="http://www.bgsu.edu/offices/safety/escort.html">&nbsp;&nbsp;Campus
+          Escort Service</option>
+          <option value="http://www.bgsu.edu/offices/sa/career">&nbsp;&nbsp;Career
+          Center</option>
+          <option value="http://www.bgsu.edu/offices/sa/counseling/">&nbsp;&nbsp;Counseling
+          Center</option>
+          <option value="http://www.bgsu.edu/offices/sa/dining/">&nbsp;&nbsp;Dining
+          Services</option>
+          <option value="http://www.bgsu.edu/offices/sa/disability/">&nbsp;&nbsp;Disability
+          Services</option>
+          <option value="http://www.bgsu.edu/departments/esl/">&nbsp;&nbsp;ESL
+          program</option>
+          <option value="http://www.bgsu.edu/offices/sfa/">&nbsp;&nbsp;Financial
+          Aid</option>
+          <option value="http://www.bgsu.edu/departments/grad/gradstep/">&nbsp;&nbsp;GradSTEp</option>
+          <option value="http://www.bgsu.edu/offices/sa/health/">&nbsp;&nbsp;Health
+          Services</option>
+          <option value="https://my.bgsu.edu/">&nbsp;&nbsp;MyBGSU</option>
+          <option value="http://www.bgsu.edu/offices/sa/career/students/oncampus_emp.html">&nbsp;&nbsp;On-Campus
+          Student employment</option>
+          <option value="http://www.bgsu.edu/offices/safety/parking/parking.html">&nbsp;&nbsp;parking</option>
+          <option value="http://www.bgsu.edu/offices/sa/health/pharmacy/">&nbsp;&nbsp;pharmacy</option>
+          <option value="http://www.bgsu.edu/offices/services/postal.htm">&nbsp;&nbsp;postal
+          Services</option>
+          <option value="http://www.bgsu.edu/offices/registrar/">&nbsp;&nbsp;Registration
+          and Records</option>
+          <option value="http://www.bgsu.edu/offices/safety/parking/shuttle.html">&nbsp;&nbsp;Shuttle
+          Service</option>
+          <option value="http://www.bgsu.edu/offices/sls">&nbsp;&nbsp;Student
+          Legal Services</option>
+          <option value="http://www.bgsu.edu/offices/studenttech/">&nbsp;&nbsp;Student
+          Technology Center</option>
+          <option value="http://www.bgsu.edu/offices/registrar/page5601.html">&nbsp;&nbsp;transcripts</option>
+          <option value="https://webmail.bgsu.edu/">&nbsp;&nbsp;WebMail</option>
+          <option value="#">--------------------------------------------------------------------------</option>
+          <option value="http://www.bgsu.edu/its/">TECHNOLOGY</option>
+          <option value="http://www.bgsu.edu/its/labs/index.html">&nbsp;&nbsp;Computer
+          Labs</option>
+          <option value="http://www.bgsu.edu/its/software/page9928.html">&nbsp;&nbsp;email</option>
+          <option value="http://www.bgsu.edu/offices/cio/webdev/index.html">&nbsp;&nbsp;Office
+          of Web Development</option>
+</select>
+<!--End of Quick links Slot Template-->
+	</td>
+</tr></table><!-- #EndlibraryItem --></td></tr>
+             
+            <tr>
+              <td width="606" height="23" align="right" valign="bottom"><!-- #BeginlibraryItem "../library/navigation.lbi" --><table cellspacing="0" cellpadding="0" width="606" bgcolor="#000000" border="0" summary="Top navigation table">
+<tbody>
+<tr align="left" valign="top">
+<td width="42" height="23"><img height="23" src="../images/spacer.gif" width="42"  alt="" /></td>
+<td width="34" height="23"><a href="http://www.bgsu.edu/index.html"><img height="23" alt="BGSU Home" hspace="0" src="../images/bgsu/img460t.gif" width="34" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0"  alt="" /></td>
+<td width="68" height="23"><a href="http://www.bgsu.edu/welcome/academics.html"><img height="23" alt="BGSU Academics" hspace="0" src="../images/bgsu/img462t.gif" width="68" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0" alt="" /></td>
+<td width="73" height="23"><a href="http://www.bgsu.edu/offices/admissions/"><img height="23" alt="BGSU Admissions" hspace="0" src="../images/bgsu/img464t.gif" width="73" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0" alt="" /></td>
+<td width="53" height="23"><a href="http://www.bgsu.edu/cultural_arts/"><img height="23" alt="The Arts" hspace="0" src="../images/bgsu/img13424t.gif" width="53" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0" alt="" /></td>
+<td width="60" height="23"><a href="http://bgsufalcons.ocsn.com/"><img height="23" alt="BGSU Athletics" hspace="0" src="../images/bgsu/img463t.gif" width="60" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0" alt="" /></td>
+<td width="58" height="23"><a href="http://www.bgsu.edu/colleges/library/"><img height="23" alt="Libraries" hspace="0" src="../images/bgsu/img465t.gif" width="58" border="0" /></a></td>
+<td width="27" height="23"><img height="23" hspace="0" src="../images/navigation_separator.gif" width="27" border="0" alt="" /></td>
+<td width="46" height="23"><a href="http://www.bgsu.edu/offices/"><img height="23" alt="Offices" hspace="0" src="../images/bgsu/img13426t.gif" width="46" border="0" /></a></td>
+</tr>
+</tbody>
+</table>
+<!-- #EndlibraryItem --></td>
+            </tr>
+        </table></td>
+      </tr>
+  </table></td>
+  <td height="44"><img src="../images/spacer.gif" width="1" height="44" hspace="0" vspace="0" border="0" alt="" /></td>
+  <td height="44"><img src="../images/spacer.gif" width="15" height="44" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="748" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="748" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="748" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="1" bgcolor="#FFE54B"><img src="../images/spacer.gif" width="748" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="30"><img src="../images/spacer.gif" width="15" height="30" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="30" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="30" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="30" class="camel" bgcolor="#FEBA42"><table width="748" border="0" cellpadding="0" cellspacing="0" summary="Body table">
+<tr align="left" valign="middle">
+<td width="15" height="6"><img src="../images/spacer.gif" width="15" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="718" height="6"><img src="../images/spacer.gif" width="718" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="6"><img src="../images/spacer.gif" width="15" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="middle">
+<td width="15" height="18"><img src="../images/spacer.gif" width="15" height="18" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="718" height="18" class="sectiontitle">
+<!-- TemplateBeginEditable name="sectiontitle" -->Department of Computer Science
+  <!-- TemplateEndEditable --></td>
+<td width="15" height="18"><img src="../images/spacer.gif" width="15" height="18" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="middle">
+<td width="15" height="6"><img src="../images/spacer.gif" width="15" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="718" height="6"><img src="../images/spacer.gif" width="718" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="6"><img src="../images/spacer.gif" width="15" height="6" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+
+<!--  Begin Departmental Top Navigation -->
+<tr>
+    <td colspan="3" align="left" valign="middle" bgcolor="#000000">
+	<a href="../index.html" accesskey="q"><img src="../images/cs/cs.gif" border="0" alt="Computer Science Home" /></a>
+	<img src="../images/cs/separator.gif" width="10" height="25" alt="" />
+	<a href="../undergraduate/index.html"><img src="../images/cs/up.gif" border="0" alt="Undergraduate Program" /></a>
+	<img src="../images/cs/separator.gif" width="10" height="25" alt="" />
+	<a href="../graduate/index.html"><img src="../images/cs/gp.gif" border="0" alt="Graduate Program" /></a>
+	<img src="../images/cs/separator.gif" width="10" height="25" alt="" />
+	<a href="../faculty.html"><img src="../images/cs/faculty.gif" border="0" alt="Computer Science Faculty" /></a>
+	<img src="../images/cs/separator.gif" width="10" height="25" alt="" />
+	<a href="../advising/index.html"><img src="../images/cs/advising1.gif" border="0" alt="Academic Advising" /></a>
+        <img src="../images/cs/separator.gif" width="10" height="25" alt="" />
+	<a href="../mission-vision.html"><img src="../images/cs/mission.gif" border="0" alt="Mission and Vision" /></a>
+	</td>
+</tr>
+<!-- End Departmental Top Navigation -->
+
+</table></td>
+<td width="1" height="30" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="30" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="30"><img src="../images/spacer.gif" width="15" height="30" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="297"><img src="../images/spacer.gif" width="15" height="297" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="297" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="297" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="297" bgcolor="#FFFFFF"><table width="748" border="0" cellpadding="0" cellspacing="0" summary="Adjust font size table">
+<tr align="left" valign="top">
+<td width="14" height="24" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="158" height="24" bgcolor="#385B5B"></td>
+<td width="14" height="24" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="24" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="24"><img src="../images/spacer.gif" width="15" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+
+<td width="530" height="24" valign="middle" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" summary ="bread Crumbs table">
+<tr>
+<!-- Begin bread Crumb -->
+<td width="69%" height="32" align="left" valign="middle" class="breadcrumb">
+   <a href="../index.html">Home</a>&nbsp;&gt;&nbsp;
+   <a href="index.html">Documentation</a>&nbsp;&gt;&nbsp;string class
+</td>
+<!-- End bread Crumb -->
+
+
+<!-- Begin Adjustable Font Size -->
+<td width="31%" height="32" align="right" valign="middle" class="fontimage">
+	<a href="#" onclick="setActiveStyleSheet('smallest'); swap_em(1); return false;" accesskey="6">
+		<img src="../images/font/btn_size_select_1_off.gif" alt="Small font" id="size1" border="0" width="31" height="43" /></a>
+	<a href="#" onclick="setActiveStyleSheet('medium'); swap_em(2); return false;" accesskey="7">
+		<img src="../images/font/btn_size_select_2_on.gif" alt="Medium font" id="size2" border="0" width="34" height="43" /></a>
+	<a href="#" onclick="setActiveStyleSheet('larger'); swap_em(3); return false;" accesskey="8">
+		<img src="../images/font/btn_size_select_3_off.gif" alt="Larger font" id="size3" border="0" width="38" height="43" /></a>
+	<a href="#" onclick="setActiveStyleSheet('largest'); swap_em(4); return false;" accesskey="9">
+		<img src="../images/font/btn_size_select_4_off.gif" alt="Largest font" id="size4" border="0" width="43" height="43" /></a>     
+</td>
+<!-- End Adjustable Font Size -->
+</tr></table>
+					
+</td>
+<td width="15" height="24"><img src="../images/spacer.gif" width="15" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="14" height="249" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="249" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="158" height="249" bgcolor="#385B5B" class="sidebar">
+<!-- TemplateBeginEditable name="sectionlinks" -->
+	<a name="navigation"></a>
+		<p class="strongtext">See Also</p>
+                <p><a href="index.html">CS Student Documentation</a></p>
+                <p><a href="faculty/index.html">CS Faculty Documentation</a></p>
+		<p><a href="../forms/index.html">Computer Science Forms</a></p>
+                		
+		<hr /><p><a href="../sitemap.html">Site Map</a></p>
+		<p><a href="../accessibility.html" accesskey="0">Accessibility Statement</a></p>
+<!-- TemplateEndEditable -->
+</td>
+<td width="14" height="249" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="249" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="249" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="249" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="249"><img src="../images/spacer.gif" width="15" height="249" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="531" height="249"><table width="531" border="0" cellpadding="0" cellspacing="0" summary ="page title table">
+<tr align="left" valign="top">
+<td width="531" height="32"><table border="0" cellpadding="0" cellspacing="0" summary ="pagetitle table">
+
+<tr>
+<td width="16" height="32" align="left" valign="middle" class="pagetitle"><img src="../images/bracket_sage_left.gif" width="16" height="32" hspace="0" vspace="0" border="0" alt="Left bracket" /></td>
+<td height="32" align="left" valign="middle" class="pagetitle">
+     <!-- TemplateBeginEditable name="pagetitle" -->C++ String Class
+     <!-- TemplateEndEditable --></td>
+<td width="12" align="left" valign="middle" class="pagetitle"><img src="../images/bracket_sage_right.gif" width="12" height="32" hspace="0" vspace="0" border="0" alt="Right bracket" /> 
+</td>
+
+</tr>
+</table></td>
+</tr>
+<tr align="left" valign="top">
+<td width="531" height="16"><img src="../images/spacer.gif" width="531" height="16" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="531" height="201"><table width="531" border="0" cellpadding="0" cellspacing="0" summary ="Body table">
+<tr align="left" valign="top">
+<td width="16" height="201"><img src="../images/spacer.gif" width="16" height="201" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="515" height="201">
+<!-- TemplateBeginEditable name="bodytext" -->
+<a name="content"></a>
+ 	<p>
+         The C++ Standard Template Library (STL) contains a string class that is used in several computer science classes. In order
+         to use the string class you should include the following statements:<br />
+         <kbd>#include &lt;string&gt;<br />
+         using std::string;</kbd>
+      </p>
+      <p>
+         The following examples assume these declarations and initial values for each:
+      </p>
+      <p>
+         <kbd>string s = &quot;abc def abc&quot;;<br />
+         string s2 = &quot;abcde uvwxyz&quot;;<br />
+         char c;<br />
+         char ch[] = &quot;aba daba do&quot;;<br />
+         char *cp = ch;<br /></kbd> <kbd>unsigned int i;</kbd>
+      </p>
+      <table border="1" cellspacing="0" cellpadding="0" summary="String class">
+         <tr>
+            <td width="15%">
+               Stream input
+            </td>
+            <td width="25%">
+               <kbd>cin &gt;&gt; s;</kbd>
+            </td>
+            <td>
+               Changes the value of s to the value read in. The value stops at whitespace.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Stream output
+            </td>
+            <td width="25%">
+               <kbd>cout &lt;&lt; s;</kbd>
+            </td>
+            <td>
+               Writes the string to the specified output stream.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Line input
+            </td>
+            <td width="25%">
+               <kbd>getline(cin, s);</kbd>
+            </td>
+            <td>
+               Reads everything up to the next newline character and puts the result into the specified string variable.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Assignment
+            </td>
+            <td width="25%">
+               <kbd>s = s2;s = &quot;abc&quot;;<br />
+               s = ch; s = cp;</kbd>
+            </td>
+            <td>
+               A string literal or a string variable or a character array can be assigned to a string variable. The last two
+               assignments have the same effect.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Subscript
+            </td>
+            <td width="25%">
+               <kbd>s[1] = &#39;c&#39;;<br />
+               c = s[1];</kbd>
+            </td>
+            <td>
+               Changes s to equal &quot;acc def abc&quot;<br />
+               Sets c to &#39;b&#39;. The subscript operator returns a char value, not a string value.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Length
+            </td>
+            <td width="25%">
+               <kbd>i = s.length();<br />
+               i = s.size();</kbd>
+            </td>
+            <td>
+               Either example sets i to the current length of the string s
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Empty?
+            </td>
+            <td width="25%">
+               <kbd>if(s.empty()) i++;<br />
+               if(s =</kbd><kbd>= &quot;&quot;) i++;</kbd>
+            </td>
+            <td>
+               Both examples add 1 to i if string s is now empty
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Relational operators
+            </td>
+            <td width="25%">
+               <kbd>if (s &lt; s2) i++;</kbd>
+            </td>
+            <td>
+               Uses ASCII code to determine which string is smaller. Here the condition is true because a space comes before letter
+               d
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Concatenation
+            </td>
+            <td width="25%">
+               <p>
+                  <kbd>s2 = s2 + &quot;x&quot;;<br />
+                  s2 += &quot;x&quot;;</kbd>
+               </p>
+            </td>
+            <td>
+               Both examples add x to the end of s2
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Substring
+            </td>
+            <td width="25%">
+               <p>
+                  <kbd>s = s2.substr(1,4);<br />
+                  s = s2.substr(1,50);</kbd>
+               </p>
+            </td>
+            <td>
+               The first example starts in position 1 of s2 and takes 4 characters, setting s to &quot;bcde&quot;. In the second
+               example, s is set to &quot;bcde uvwxyz&quot;. If the length specified is longer than the remaining number of
+               characters, the rest of the string is used. The first position in a string is position 0.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Substring replace
+            </td>
+            <td width="25%">
+               <kbd>s.replace(4,3,&quot;x&quot;);</kbd>
+            </td>
+            <td>
+               Replaces the three characters of s beginning in position 4 with the character x. Variable s is set to &quot;abc x
+               abc&quot;.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Substring removal
+            </td>
+            <td width="25%">
+               <kbd>s.erase(4,5);<br />
+               s.erase(4);</kbd>
+            </td>
+            <td>
+               Removes the five characters starting in position 4 of s. The new value of s is &quot;abc bc&quot;.<br />
+               Remove from position 4 to end of string. The new value of s is &quot;abc &quot;.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Character array to string
+            </td>
+            <td width="25%">
+               <kbd>s = ch;</kbd>
+            </td>
+            <td>
+               Converts character array ch into string s.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               String to character array
+            </td>
+            <td width="25%">
+               <kbd>cp = s.c_str();</kbd>
+            </td>
+            <td>
+               Pointer cp points to a character array with the same characters as s.
+            </td>
+         </tr>
+         <tr>
+            <td width="15%">
+               Pattern matching
+            </td>
+            <td width="25%">
+               <p>
+                  <kbd>i = s.find(&quot;ab&quot;,4);</kbd>
+               </p>
+               <p>
+                  <kbd>if(s.rfind(&quot;ab&quot;,4) != string::npos)<br />
+                  &nbsp;&nbsp;&nbsp;cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;</kbd>
+               </p>
+            </td>
+            <td>
+               The first example returns the position of the substring &quot;ab&quot; starting the search in position 4. Sets i to
+               8. The find and rfind functions return the unsigned int <b>string::npos</b> if substring not found. The
+               second example searches from right to left starting at position 4. Since the substring is found, the word Yes is
+               printed.
+            </td>
+         </tr>
+      </table>
+      <p>
+         Because of a bug in the bgunix version of the g++ compiler, writing a string variable under setw control doesn&#39;t work.
+         You need to use the c_str member function, like this:<br />
+         <kbd>cout &lt;&lt; setw(15) &lt;&lt; s.c_str() &lt;&lt; endl;</kbd>
+      </p>
+         
+    	<!-- TemplateEndEditable --></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+<td width="15" height="249"><img src="../images/spacer.gif" width="15" height="249" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="14" height="24" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="158" height="24" bgcolor="#385B5B"><img src="../images/spacer.gif" width="158" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="14" height="24" bgcolor="#385B5B"><img src="../images/spacer.gif" width="14" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="24" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="24"><img src="../images/spacer.gif" width="15" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="531" height="24"><img src="../images/spacer.gif" width="531" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="24"><img src="../images/spacer.gif" width="15" height="24" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+</table></td>
+<td width="1" height="297" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="297" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="297"><img src="../images/spacer.gif" width="15" height="297" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="748" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="1" bgcolor="#FEBA42"><img src="../images/spacer.gif" width="1" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="1"><img src="../images/spacer.gif" width="15" height="1" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5" bgcolor="#FF7300"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="5"><img src="../images/spacer.gif" width="748" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="5"><img src="../images/spacer.gif" width="1" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="5"><img src="../images/spacer.gif" width="15" height="5" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="22"><img src="../images/spacer.gif" width="15" height="22" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="22"><img src="../images/spacer.gif" width="1" height="22" hspace="0" vspace="0" border="0" alt="" /></td>
+ <td width="748" height="22">
+ <a name="footer"></a>
+ <!-- #BeginlibraryItem " /library/footer.lbi" -->
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" summary ="Footer table">
+ 	<tr>
+   	<td class="lastmodified"><script type="text/javascript" src="http://www.bgsu.edu/scripts/lastModified.js"></script>
+            <br /><a href="mailto:webmaster@cs.bgsu.edu">webmaster@cs.bgsu.edu</a></td>
+ 	</tr>
+ 	<tr>
+    	<td height="22" class="footer" >Bowling&nbsp;Green&nbsp;State&nbsp;University&nbsp;&nbsp;| &nbsp;Bowling&nbsp;Green,&nbsp;OH&nbsp;43403-0001&nbsp;&nbsp;| &nbsp;1-419-372-2531&nbsp;&nbsp;| &nbsp;<a href="http://www.bgsu.edu/scripts/contact.html">Contact&nbsp;Us</a>&nbsp;&nbsp;| &nbsp;<a href="http://www.bgsu.edu/sitemap.html">Site&nbsp;Map</a></td>
+  	</tr>
+	</table>
+<!-- #EndlibraryItem --></td>
+<td width="1" height="22"><img src="../images/spacer.gif" width="1" height="22" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="22"><img src="../images/spacer.gif" width="15" height="22" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+<tr align="left" valign="top">
+<td width="15" height="15"><img src="../images/spacer.gif" width="15" height="15" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="15"><img src="../images/spacer.gif" width="1" height="15" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="748" height="15"><img src="../images/spacer.gif" width="748" height="15" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="1" height="15"><img src="../images/spacer.gif" width="1" height="15" hspace="0" vspace="0" border="0" alt="" /></td>
+<td width="15" height="15"><img src="../images/spacer.gif" width="15" height="15" hspace="0" vspace="0" border="0" alt="" /></td>
+</tr>
+</table>
+</body>
+</html>

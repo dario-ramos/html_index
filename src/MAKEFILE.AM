@@ -1,0 +1,14 @@
+bin_PROGRAMS = tpdatos
+tpdatos_SOURCES = main_G7.cpp manejadorterms.cpp myparser.cpp \
+							ParaUsarLibxml.txt indexador.cpp trie.cpp lexico.cpp file.h file.cpp directorio.cpp \
+						constantes.cpp sortexterno.cpp norma.cpp frontcodingmanager.cpp fcmrecord.cpp \
+	file2.cpp physicallayer.cpp constants.cpp
+
+# set the include path found by configure
+INCLUDES= $(all_includes)
+
+# the library search path.
+tpdatos_LDFLAGS = $(all_libraries) 
+noinst_HEADERS = myparser.h manejadorterms.h indexador.h trie.h lexico.h file.h \
+							directorio.h constantes.h registros.h sortexterno.h norma.h frontcodingmanager.h \
+	fcmrecord.h file2.h physicallayer.h constants.h

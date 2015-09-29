@@ -1,0 +1,13 @@
+Bueno, aca va lo que hay que poner para poder usar la libxml2 con
+Kdevelop.
+En principio incluir los headers en el código fuente. Yo tengo:
+#include "/usr/include/libxml2/libxml/xmlmemory.h"
+#include "/usr/include/libxml2/libxml/HTMLparser.h"
+
+Después hay que setear un par de opciones en el menú Proyecto ->
+Opciones del proyecto -> Opciones de configure:
+En el tab General en CPPFLAGS va "-I/usr/include/libxml2" sin
+comillas; y en LDFLAGS va "-L/usr/lib -lxml2 -lz -lm" sin comillas.
+Con eso debería andar.
+
+Saludos, Juan Cruz

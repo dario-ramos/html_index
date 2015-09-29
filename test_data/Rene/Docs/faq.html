@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="GENERATOR"
+ content="Mozilla/4.5 [en] (Win98; I) [Netscape]">
+  <title>Html Validator for Firefox and Mozilla</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="shortcut icon" href="../favicon.png">
+</head>
+<body>
+<iframe src="../banner.html" marginwidth="0" marginheight="0"
+ frameborder="0" height="65" scrolling="no" width="100%"></iframe>
+<table style="width: 100%; text-align: left;" border="0" cellpadding="4"
+ cellspacing="4">
+  <tbody>
+    <tr>
+      <td class="td_toc"> <iframe src="toc.html" frameborder="0"
+ height="100%" scrolling="no" width="100%"></iframe><br>
+      </td>
+      <td style="vertical-align: top;">
+      <h3> Problems / FAQ </h3>
+      <br>
+First, the extension is at his beginning. <a href="todo.html">And
+not
+complete at all</a> :-)<br>
+I do my best, but I know that it is not perfect.<br>
+      <br>
+There is a mailing list about the extension <a
+ href="mailto:htmlvalidator-help@lists.sourceforge.net">htmlvalidator-help@list.sourceforce.net</a><br>
+You can also look the <a
+ href="https://lists.sourceforge.net/lists/listinfo/htmlvalidator-help">mailing
+list archive</a><br>
+      <br>
+If you have a problem not listed here, please do not hesitate to
+contact me: <a href="mailto:mgueury@skynet.be">mgueury@skynet.be</a><br>
+If you have the possibility, please give me the logs of the <a
+ href="#DIAGLOG">diagnostic logging</a>.<br>
+      <h4>1. The numbers of errors in the view source is
+different than
+the one seen in the browser (Firefox 1.0 only)<br>
+      </h4>
+There is a big bug in Firefox 1.0 and corrected in 1.5. The HTML source
+seen in the view source is sometimes 'modified' by Firefox. And the
+source seen
+is for most page a little different than the one sent by the webserver.<br>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=57724">https://bugzilla.mozilla.org/show_bug.cgi?id=57724</a><br>
+      <br>
+There is a side effect on the extension in Firefox 1.0<br>
+      <ul>
+        <li>In the browser, <span style="font-weight: bold;">it
+works</span>.
+At the icon of the status bar, the HTML sent by the webserver is
+validated</li>
+        <li>But in the view source, <span style="font-weight: bold;">the
+HTML</span> is&nbsp; a little different and sometimes <span
+ style="font-weight: bold;">contains more or less errors than
+the real
+page&nbsp;</span></li>
+      </ul>
+This looks like a small problem. But it is annoying when trying to
+remove all the errors.<br>
+      <br>
+Solution: The real solution is to use Firefox 1.5 if possible.<br>
+Work-around: Right click on the icon in the browser and choose "copy
+errors to clipboard"<br>
+      <h4>2. The extension does not work.</h4>
+Check that you installed the extension for your Operating system and
+Architecture. The
+extension is available for Windows, Linux 32bits, Linux AMD 64bits,
+Linux PPC and MacOSX Intel or PPC, ....<br>
+      <h4><a name="LINUX"></a>3. The extension
+does not work on Linux ( ex: Fedora Core 4, Mandriva 2006 )</h4>
+Symptoms: The icon in the browser is always green and the text is -/-.
+Or an error windows appears after installing the extension in version
+0.77 and after.<br>
+      <br>
+Cause: When installing the extension, you are using a C library that I
+compiled with a older LIBC++ version than the one distributed with
+Fedora Core 4. Unhapilly both are incompatible. Another symptom is that
+if you download the&nbsp;real Firefox compiled in the same way from
+the
+Mozilla.org website, it&nbsp;gives this error.<br>
+      <br>
+      <div style="margin-left: 40px;"><span
+ style="color: rgb(153, 0, 0);">error while loading shared
+libraries:
+libstdc++.so.5: cannot open shared object file: No such file or
+directory</span><br>
+      </div>
+      <br>
+      <span class="blue_strong">On Fedora Core 4:</span><br>
+Solution: you need to install I&nbsp; compat-libstdc++ (yum install
+compat-libstdc++-33)<br>
+      <br>
+      <span class="blue_strong">On Fedora Core 5:</span><br>
+Solution: you need to install two compat-libstdc++ packages (yum
+install compat-libstdc++-296 compat-libstdc++-33)<br>
+Sometimes it seems that "yum install tidy" is also needed<br>
+      <br>
+      <span class="blue_strong">On Mandriva 2006:</span><br>
+Solution: <br>
+- stop Firefox<br>
+- install libstdc++5&nbsp;by typing "urpmi libstdc++5" in a
+console, as
+root or by using the Mandriva Control Center and the package installer.<br>
+- reinstall the extension<br>
+      <br>
+      <span class="blue_strong">On Ubuntu 5.10:</span><br>
+Solution: &gt; sudo apt-get install libstdc++5
+&nbsp;<br>
+      <br>
+      <span class="blue_strong">On Slackware xxx</span><br>
+Solution: install&nbsp;cxxlibs-5.1.0-i486-1<br>
+      <br>
+      <span class="blue_strong">On Cent OS 4</span><br>
+&gt; yum install compat-libstdc++-33<br>
+&gt; yum install mozilla-nspr<br>
+      <br>
+      <span class="blue_strong">On Debian</span><br>
+It seems that installing <br>
+&gt; libstdc++5&nbsp;<br>
+&gt;&nbsp;libnspr4<br>
+      <br>
+Is enough to make it work.<br>
+      <br>
+      <span class="blue_strong">On another type of linux
+with the problem,</span> <br>
+you can try this to know which .so are missing to run the extension
+correctly.<br>
+      <pre>&gt; cd ~/.mozilla/firefox/&lt;xxxxxxxx&gt;/extensions/{3b56bcc7-54e5-44a2-9b44-66c3ef58c13e}/components<br>&gt; ldd libnstidy.so<br> linux-gate.so.1 =&gt; (0xffffe000)<br> libplds4.so =&gt; not found<br> libplc4.so =&gt; not found<br> libnspr4.so =&gt; not found<br> libpthread.so.0 =&gt; /lib/tls/libpthread.so.0 (0x40067000)<br> libdl.so.2 =&gt; /lib/libdl.so.2 (0x40078000)<br> libstdc++.so.5 =&gt; /usr/lib/libstdc++.so.5 (0x4007b000)<br> libm.so.6 =&gt; /lib/tls/libm.so.6 (0x40138000)<br> libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x4015a000)<br> libc.so.6 =&gt; /lib/tls/libc.so.6 (0x40162000)<br> /lib/ld-linux.so.2 =&gt; /lib/ld-linux.so.2 (0x80000000)<br><br></pre>
+This is the output you should see. It is normal that the 3 libs above
+are not found as they are part of Firefox. The other libraries are
+normally part of the Linux ditribution. If they are misssing, it means
+that the extension will probably not work. Most of the time, you will
+need to install the LIBC compatibility package from your linux
+distribution to make all .so resolve correctly.<br>
+      <br>
+If you find such a type of Linux, and find a solution for your
+installation, please send me a mail and I will write down the solution
+like I did for Fedora Core 4, Mandriva 2006 above. Thanks by advance.
+      <h4>4. The icon in the browser show always empty cache icon
+(&nbsp;<img alt="empty" src="icon/empty.png"
+ style="width: 16px; height: 16px;"> )</h4>
+It seems to happen in several cases. Most of the time, it is after
+disabling the browser cache in Firefox. For example with WebDeveloper.
+Without cache, the extension does not work. <br>
+      <br>
+To reenable it:<br>
+- go to the URL, type about:config<br>
+- in the filter type : cache<br>
+- check that <br>
+&nbsp; - browser.cache.disk.enable = true<br>
+&nbsp; - browser.cache.memory.enable = true<br>
+- then go to options... Cache and clear the cache<br>
+      <h4>5. The Firefox 1.0 version does not work with Firefox
+1.5
+or Mozilla 1.8
+trunk&nbsp; </h4>
+An error appears on the screen when starting Firefox <br>
+      <br>
+      <div style="margin-left: 40px;"> <span
+ style="color: rgb(153, 0, 0);">XPCOM:EventReceiver</span><br
+ style="color: rgb(153, 0, 0);">
+      <span style="color: rgb(153, 0, 0);">The procedure
+entry point
+?Clone@nsMemory@@SAPAXBXI@Z could not be found in the dynamic library
+xpcom.dll</span><br>
+      </div>
+      <br>
+Firefox 1.1 and Mozilla 1.8 have rewritten the XPCOM library. I have no
+control on this at all. A side effect of that change is the error
+message above. What happens is that the extension uses the function
+nsMemory::Clone. But the function is not anymore in XPCOM.dll of
+Firefox 1.1. The only solution was to make a separate version with a
+new tidy DLL compatible with 1.1.<br>
+      <br>
+You can find it in the <a href="download.html">download</a>
+area. <br>
+- reinstall the extension for Firefox 1.5<br>
+- and restart the browser.<br>
+      <br>
+Solution: This is solved in version 0.62<br>
+      <h4>6. It is not available for my platform (Solaris, Hp UX,
+Aix,....) </h4>
+The extension contains a part in C/C++ with the validation logic. It
+needs to be recompiled on each platform.<br>
+Ideally, there should be an extension .xpi, by platform. But it is
+unrealistic. I would need to maintain it for each version of Mozilla or
+Firefox for each platform.<br>
+There is currently a Windows, Linux and MacOsX version in the <a
+ href="download.html">Download</a> area.<br>
+      <br>
+The <a href="download.html">code</a> is normally
+compilable for each
+platforms. I will try to solve this, like this:<br>
+      <ul>
+        <li>the <a href="compile.html">compilation
+instructions</a>
+are available here. </li>
+        <li>or the ideal is to have the C part in Mozilla cvs, or
+Firefox. So it would be compiled automatically by the mozilla build
+machines. But I dream there.</li>
+      </ul>
+For MacOSX user, a similar plugin has been recently developped for
+Safari. <br>
+&gt; <a href="http://www.zappatic.net/safaritidy/index.html">http://www.zappatic.net/safaritidy/index.html<br>
+      </a>
+      <h4>7. No line numbers </h4>
+      <ul>
+        <li>In the version 0.8x of the extension, there will be a line
+numbering. See <a href="preview_080.html">here.</a><br>
+        </li>
+        <li>Mozilla 1.7, 1.8 has a status bar indicating the line
+and
+column number.<br>
+You can WA the problem by doing: Edit / Go to Line... (CTRL+L)<br>
+I suppose that future Firefox versions based on a later mozilla version
+will have this feature.</li>
+      </ul>
+      <h4> 8. All the warnings/errors are not documented<br>
+      </h4>
+Please wait for a next version<br>
+See : <a href="todo.html">to do</a><br>
+      <h4> 9. I can not hide the validation in the page source.
+The
+page source validate also non HTML content (css, javascript, ...) </h4>
+Open the options and check [x] Disable validation in the View Source<br>
+      <h4>10. Sometimes after the installation the extension does
+not
+work. </h4>
+      <ul>
+        <li>You need to close the browser and restart it to see
+it
+working.<br>
+Sometimes, you need to uninstall the extension. Then install again.<br>
+          <br>
+        </li>
+        <li>For Mozilla at least, you need to be admistrator on
+Windows
+to be able to install the extension.<br>
+          <br>
+        </li>
+        <li>You are using the <a target="_top"
+ href="http://piro.sakura.ne.jp/xul/_tabextensions.html.en">TabBrowser
+Extensions</a> (TBE)<br>
+TBE can depending of his settings change the window containing the View
+Source. For example, if you have choosen to see the source in a tab,
+the Validator can not be used. You can correct this by resetting the
+default value of TBE.<br>
+1) Go in Tools/Extensions<br>
+2) Choose TBE and click Options<br>
+3) Go in Use Tab / View Source<br>
+4) Ask to see the source in normal mode<br>
+5) Restart the Browser.<br>
+        </li>
+      </ul>
+      <h4>11. Some menu options are disabled in the page source
+menus. </h4>
+Some menu items are disabled in the menu. It is Firefox behavior. I
+have no idea neither, why these menu are there if they can not be used.<br>
+Mozilla 1.7, 1.8 has not such problems.<br>
+      <h4> 12. The HTML in the page source is not the one of my
+page. </h4>
+It appears in very rare case that the HTML source is not the one given
+by the server.<br>
+This is due to a mozilla bug. <a
+ href="https://bugzilla.mozilla.org/show_bug.cgi?id=57724">https://bugzilla.mozilla.org/show_bug.cgi?id=57724</a><br>
+      <br>
+Solution: This bug is solved in version Firefox 1.5 and (1.0+)<br>
+      <h4><a name="UNINSTALL"></a>13. How to remove the extension when
+for example the profile is corrupted.</h4>
+      <h5>A) Read the Mozilla uninstall instructions<br>
+      </h5>
+      <a href="http://kb.mozillazine.org/Uninstalling_extensions">http://kb.mozillazine.org/Uninstalling_extensions</a><br>
+      <h5>B) Remove your profile data<br>
+      <br>
+Step 1 - Find the Mozilla profile directory</h5>
+For ex:<br>
+&nbsp;Windows : C:\Documents and
+Settings\your_user_name\Application
+Data\Mozilla\profiles\default\xxxxxxx.slt\<br>
+&nbsp;Unix : ~/.mozilla<br>
+      <br>
+Check in the profile directory that it is the good one.<br>
+Open the file the Profiles\default\XXXXXXX.slt\bookmarks.html<br>
+And verify that it is well your latest bookmarks list.<br>
+      <h5>Step 2 - Backup</h5>
+Take a backup of all the prrofiles = the Profiles directory (for ex:
+zip it) -&gt; profiles.zip <br>
+It is always a good idea to make a backup regularly of these profiles
+and keep it on another hardware in case of unexpected problems.<br>
+      <h5>Step 3 - Remove overlays</h5>
+Go to the subdirectory chrome in your profile<br>
+C:\Documents and Settings\your_user_name\Application
+Data\Mozilla\Profiles\default\xxxxxxx.slt\chrome<br>
+      <br>
+Check that Mozilla is stopped<br>
+Rename directory overlayinfo in overlayinfo.old<br>
+      <br>
+Restart Mozilla and all extensions should be gone.<br>
+      <h4>14. The validation errors are not the same than the W3C
+validator </h4>
+W3c has made 2 programs to verify the HTML syntax. Both uses different
+algorithms:<br>
+- <a href="http://validator.w3.org">W3C Validator</a>
+is based on
+SGML and the verification of the DTD of the page (defined in the
+DOCTYPE)<br>
+- <a href="http://tidy.sourceforge.net/">HTML Tidy</a>
+is called a
+'linter', lexer. In short, it parses the page and try to understand the
+errors.<br>
+      <br>
+Both technologies have their advantages and disadvantages. This
+extension is based on <a href="http://tidy.sourceforge.net/">HTML
+Tidy</a>,
+it includes the code of Tidy without changes. From my experience, the
+errors are the same in the 2 programs except
+that Tidy shows more errors. It shows errors about attributes values.
+And it tries also to clean the page of
+useless, empty tags and so on.<br>
+      <br>
+Tidy has an accessibility-checker included. Also, it can clean up a
+HTML page. It is interesting to help people to find solutions for their
+errors.<br>
+      <br>
+If you have questions about the validation result, there is a user list
+and with archives :<a
+ href="http://lists.w3.org/Archives/Public/html-tidy/">http://lists.w3.org/Archives/Public/html-tidy/</a><br>
+      <h4><a name="czech"></a>15. The
+validation text is in Czech</h4>
+      <span style="text-decoration: underline;">Symptoms: </span><br>
+- You see for example for 0 chyb/0 varování in
+the icon text.<br>
+- You&nbsp;have installed the extension 0.72 to 0.74 with Firefox
+working in non-translated version of the extension&nbsp;(ex
+&nbsp;Portuguese)<br>
+- Even, if the fix is in version 0.75, unhappily,&nbsp;<span
+ class="green_strong">installing 0.75 will not solve the
+issue !</span><span style="font-weight: bold;"><br>
+      <br>
+      </span>The problem is that the chrome.rdf file of the
+profile is now corrupted
+and can not be corrected by a new version of the extension. Let's
+correct it manually.<br>
+      <br>
+      <span style="text-decoration: underline;">Solution:</span><br>
+- Before installing the version 0.75 or higher. Go to your
+profile/chrome directory <br>
+&nbsp; &nbsp;Windows: c:\document and
+settings\&lt;user&gt;\application
+data\Mozilla\firefox\Profile\&lt;id&gt;\Chrome<br>
+&nbsp; &nbsp;Unix: ~/mozilla/firefox/&lt;id&gt;/chrome<br>
+a. one solution is to&nbsp;remove the file chrome.rdf but you will
+loose all your extension. <br>
+b. the other solution is to edit the chrome.rdf and to correct it by
+switching the czech and english line.<br>
+&nbsp; &nbsp;&nbsp; Look for the line containing :
+resource="urn:mozilla:locale:cs-CZ"<br>
+      <br>
+      <span style="font-family: monospace;">Wrong <br>
+&nbsp; ...<br style="font-family: monospace;">
+      </span><span style="font-family: monospace;">&nbsp;
+&lt;RDF:Seq RDF:about="urn:mozilla:locale:root"&gt;</span><br
+ style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+&lt;RDF:li RDF:resource="urn:mozilla:locale:cs-CZ"/&gt;</span><br
+ style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;
+&nbsp; &nbsp;...</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+&lt;RDF:li RDF:resource="urn:mozilla:locale:en-US"/&gt;</span><br
+ style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;
+&nbsp; &nbsp;...<br>
+      <br style="font-family: monospace;">
+      </span><span style="font-family: monospace;">Right
+(en-US should be at the top)<br>
+&nbsp; ...<br style="font-family: monospace;">
+      </span><span style="font-family: monospace;">&nbsp;
+&lt;RDF:Seq RDF:about="urn:mozilla:locale:root"&gt;</span><br
+ style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+&lt;RDF:li RDF:resource="urn:mozilla:locale:en-US"/&gt;</span><br
+ style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;
+&nbsp; &nbsp;...</span><br style="font-family: monospace;">
+      <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+&lt;RDF:li RDF:resource="urn:mozilla:locale:cz-CZ"/&gt;</span><br>
+      <h4>16. Installation of the&nbsp;extension is blocked</h4>
+Whatever you do, the extension is never installed and is blocked by
+firefox. You see a blocked&nbsp;green line on the top of the browser.<br>
+      <br>
+      <span style="text-decoration: underline;">Solution:</span><br
+ style="text-decoration: underline;">
+If you disabled xpinstall in Firefox 1.0.x by unselecting the "Allow
+Web sites to Install Software" preference, you will not be able to
+install HTML Validator on Firefox 1.5.&nbsp; Go to about:config and set
+the xpinstall.enabled preference to true to re-enable installs. <br>
+      <h4><a name="DIAGLOG"></a>17. The
+extension crashes or hangs and
+you would like to
+report
+a problem/bug not listed above.</h4>
+Please be sure to use the version 0.59 or later. In these versions,
+there
+is a diagnostic logging that can be created for helping me to
+determine the cause to the issue. To enable it:<br>
+1. Start Firefox./Mozilla<br>
+2. In the URL line, type: <a href="about:config">about:config<br>
+      </a>&nbsp;&nbsp;&nbsp; In the filter box type :
+tidy<br>
+3. In HTML Validator <br>
+&nbsp;&nbsp;&nbsp; - before 0.8, edit the properties
+"tidy.options.diaglog_dir". It is empty,
+disabled, by default. <br>
+&nbsp;&nbsp; &nbsp; &nbsp; Type in the value the directory where
+the extension
+will write the logs files.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ex: c:\temp to store the log file
+in the
+c:\temp
+directory on windows<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+/tmp for Unix<br>
+&nbsp;&nbsp;&nbsp; - in version 0.8 and later, the tidy dir will be
+created in c:\program files\mozilla firefox\tidy on Windows<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+and ~/.mozilla/&lt;your profile&gt;/tidy on other platform<br>
+4. Set also the propery "tidy.options.debug" to true<br>
+5. Stop Firefox / Start Firefox.<br>
+6. Reproduce the issue.<br>
+7. Send me (<a href="mailto:mgueury@skynet.be">mgueury@skynet.be</a>)
+the 2 logs files: <br>
+&nbsp;&nbsp;&nbsp; - tidy_firefox_diag.log, <br>
+&nbsp;&nbsp;&nbsp; - tidy_last_validated.html<br>
+&nbsp;&nbsp;&nbsp; with <br>
+&nbsp;&nbsp;&nbsp; - a description on how to reproduce
+the issue, if possible, step by step<br>
+&nbsp;&nbsp;&nbsp; - your OS and CPU<br>
+      <br>
+Thanks by advance.<br>
+      <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
